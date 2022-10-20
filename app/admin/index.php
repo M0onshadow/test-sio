@@ -2,9 +2,9 @@
 
 session_start();
 
-include_once('config/variables.php');
-include_once('config/mysql.php');
-include_once('requests/users.php');
+include_once('../config/variables.php');
+include_once('../config/mysql.php');
+include_once('../requests/users.php');
 
 ?>
 

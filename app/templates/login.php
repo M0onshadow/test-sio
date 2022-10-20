@@ -2,20 +2,15 @@
 
 // Validation du formulaire
 if (isset($_POST['email']) && isset($_POST['password'])) {
-    foreach ($users as $user) {
-        if ($user['email'] === $_POST['email'] && $user['password'] === $_POST['password']) {
-            $_SESSION['LOGGED_USER'] = [
-                'nom' => $user['nom'],
-                'prenom' => $user['prenom'],
-                'email' => $user['email'],
-            ];
-        } else {
-            $errorMessage = sprintf(
-                "Les information envoyées ne permettent pas de vous identifier : (%s/%s)",
-                $_POST['email'],
-                $_POST['password'],
-            );
-        }
+
+    $user = findLoginUser($db, $_POST['email']));
+
+    if ($user){ //E-mail trouvé en bdd
+        $_SESSION['LOGGED_USER'] = [
+            'nom' => $user['nom'],
+            'prenom' => $user['prenom'],
+            'email' => $user['email'],
+        ];
     }
 }
 
