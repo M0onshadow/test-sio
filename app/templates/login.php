@@ -3,7 +3,7 @@
 // Validation du formulaire
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
-    $user = findLoginUser($db, $_POST['email']));
+    $user = findLoginUser($db, $_POST['email']);
 
     if ($user){ //E-mail trouvé en bdd
         $_SESSION['LOGGED_USER'] = [

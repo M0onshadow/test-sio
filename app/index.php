@@ -27,7 +27,7 @@ include_once('requests/users.php');
     <?php include_once($rootTemplate . 'header.php'); ?>
 
     <main>
-
+        <?php var_dump(findAllUsers());?>
         <?php include_once($rootTemplate . 'login.php'); ?>
 
         <?php if (isset($_SESSION['LOGGED_USER'])) : ?>

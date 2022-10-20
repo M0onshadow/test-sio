@@ -151,7 +151,7 @@ section {
     color: whitesmoke;
 }
 
-.form-login-area {
+.form-content {
     width: 60%;
     margin: auto;
     text-align: center;
@@ -161,7 +161,7 @@ section {
     box-shadow: var(--box-shadow);
 }
 
-.form-login-input {
+.form-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

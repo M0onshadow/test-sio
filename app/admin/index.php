@@ -27,28 +27,11 @@ include_once('../requests/users.php');
     <?php include_once($rootTemplate . 'header.php'); ?>
 
     <main>
-
-        <?php include_once($rootTemplate . 'login.php'); ?>
-
-        <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
-            <section>
-                <form action="contact.php" method="POST" enctype="multipart/form-data">
-                    <div>
-                        <label for="nom">Votre nom:</label>
-                        <input type="text" name="nom">
-                    </div>
-                    <div>
-                        <label for="age">Votre age:</label>
-                        <input type="number" name="age">
-                    </div>
-                    <div>
-                        <label for="image">Votre image:</label>
-                        <input type="file" name="image">
-                    </div>
-                    <button type="submit">Envoyer</button>
-                </form>
-            </section>
-        <?php endif; ?>
+        <section>
+            <h1>
+                Administration du site
+            </h1>
+        </section>
     </main>
 
     <?php include_once($rootTemplate . 'footer.php'); ?>
