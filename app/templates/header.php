@@ -5,9 +5,10 @@
                 <a href="/">My App Php</a>
             </div>
             <ul class="navbar-list">
-                <li><a href="#">Lien 1</a></li>
-                <li><a href="#">Lien 2</a></li>
-                <li><a href="#">Lien 3</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
+                    <li><a href="logout.php">Déconnexion</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>

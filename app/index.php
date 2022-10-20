@@ -1,5 +1,17 @@
 <?php
+
+session_start();
+
 include_once('config/variables.php');
+
+$users = [
+    [
+        'nom' => 'Bertrand',
+        'prenom' => 'Pierre',
+        'email' => 'pierre@test.com',
+        'password' => 'Test1234'
+    ]
+];
 ?>
 
 <!DOCTYPE html>
@@ -21,23 +33,28 @@ include_once('config/variables.php');
     <?php include_once($rootTemplate . 'header.php'); ?>
 
     <main>
-        <section>
-            <form action="contact.php" method="POST" enctype="multipart/form-data">
-                <div>
-                    <label for="nom">Votre nom:</label>
-                    <input type="text" name="nom">
-                </div>
-                <div>
-                    <label for="age">Votre age:</label>
-                    <input type="number" name="age">
-                </div>
-                <div>
-                    <label for="image">Votre image:</label>
-                    <input type="file" name="image">
-                </div>
-                <button type="submit">Envoyer</button>
-            </form>
-        </section>
+
+        <?php include_once($rootTemplate . 'login.php'); ?>
+
+        <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
+            <section>
+                <form action="contact.php" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <label for="nom">Votre nom:</label>
+                        <input type="text" name="nom">
+                    </div>
+                    <div>
+                        <label for="age">Votre age:</label>
+                        <input type="number" name="age">
+                    </div>
+                    <div>
+                        <label for="image">Votre image:</label>
+                        <input type="file" name="image">
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </section>
+        <?php endif; ?>
     </main>
 
     <?php include_once($rootTemplate . 'footer.php'); ?>

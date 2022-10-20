@@ -7,7 +7,8 @@
     --primary: #95D1CC;
     --secondary: #22577E;
     --terciary: #F6F2D4;
-    --box-shadow: 1px 1px 50px -10px rgba(0, 0, 0, 0.71);
+    --box-shadow: 1px 5px 30px -10px rgba(0, 0, 0, 0.71);
+    --border-radius: 8px;
 }
 
 * {
@@ -89,7 +90,7 @@ section {
 }
 
 section {
-    margin: 3.5em auto 1em;
+    margin: 3.5em auto;
 }
 
 /************ Navbar **************/
@@ -112,6 +113,72 @@ section {
 .navbar-list {
     display: flex;
     gap: 10px;
+}
+
+.alert {
+    width: 80%;
+    margin: auto;
+    padding: 1em;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    background-color: rgba(72, 184, 122, 0.5);
+    border: 1px solid rgb(72, 184, 122);
+}
+
+.alert-danger {
+    background-color: rgba(184, 72, 72, 0.5);
+    border: 1px solid rgb(184, 72, 72);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 900;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary);
+    color: whitesmoke;
+}
+
+.form-login-area {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary);
+    box-shadow: var(--box-shadow);
+}
+
+.form-login-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+    margin-bottom: 1em;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid var(--primary);
+    border-radius: var(--border-radius);
 }
 
 footer {
